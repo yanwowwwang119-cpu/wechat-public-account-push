@@ -17,14 +17,14 @@ const USER_CONFIG = {
   USERS: [
     {
       // 想要发送的人的名字
-      name: 'wyw',
+      name: 'wyw-zjy',
       // wyw所在城市
       province: '天津',
       city: '天津',
       // 使用微信测试号：扫码关注你的微信测试号后生成的一段字符串，在测试号后台能看到
       id: 'oI6z32-thaOTxjmHmWkg2R8ZkWE0',
       // 使用微信测试号：你想对他发送的模板消息的模板ID
-      useTemplateId: 'bwgNPh4916UPVGsJdIO_L4HyZqNgs6IQV4Fp4MPz3Ug',
+      useTemplateId: '4KMWNX4GHsLHHR3nTRrcIL4WmOJjbzzOBxjhnwcpacw',
       // 新历生日, 仅用作获取星座运势, 格式必须为MM-DD
       horoscopeDate: '12-21',
       festivals: [
@@ -65,14 +65,14 @@ const USER_CONFIG = {
       ]
      {
       // 想要发送的人的名字
-      name: 'zjy',
+      name: 'zjy-zjy',
       // zjy所在城市
       province: '广东',
       city: '深圳',
       // 使用微信测试号：扫码关注你的微信测试号后生成的一段字符串，在测试号后台能看到
       id: 'oI6z32-thaOTxjmHmWkg2R8ZkWE0',
       // 使用微信测试号：你想对他发送的模板消息的模板ID
-      useTemplateId: 'bwgNPh4916UPVGsJdIO_L4HyZqNgs6IQV4Fp4MPz3Ug',
+      useTemplateId: 'lv2e9jMyL1pnqq_hakMiedJwa_beLGOKOFCcT4zt2Sw',
       // 新历生日, 仅用作获取星座运势, 格式必须为MM-DD
       horoscopeDate: '12-21',
       festivals: [
