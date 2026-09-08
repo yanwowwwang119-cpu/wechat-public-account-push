@@ -48,8 +48,13 @@ const USER_CONFIG = {
   // 使用微信测试号：公众号APP_SECRET
   APP_SECRET: '8163c4057ada41abd1cf735c51a34a1a',
 
-  PROVINCE: '天津',
-  CITY: '天津',
+  // wyw所在城市
+  province: '天津',
+  city: '天津',
+
+  // zjy所在城市
+  otherProvince: '广东',
+  otherCity: '深圳',
 
   // 小窝的今日课程
 SLOT_LIST: otherCourseSlots,
