@@ -864,6 +864,31 @@ export const getAggregatedData = async () => {
       value: weatherInfo[item] || '获取失败',
       color: getColor(),
     }))
+    // 获取第二座城市的天气
+    const otherWeatherInfo = user.otherCity
+      ? await getWeather(
+        user.otherProvince || '',
+        user.otherCity
+      )
+      : {}
+
+    const otherWeatherMessage = [
+      {
+        name: 'other_city',
+        value: user.otherCity || '未设置城市',
+        color: getColor(),
+      },
+      ...[
+        ['weather', 'other_weather'],
+        ['minTemperature', 'other_min_temperature'],
+        ['maxTemperature', 'other_max_temperature'],
+        ['notice', 'other_notice'],
+      ].map(([key, name]) => ({
+        name,
+        value: otherWeatherInfo[key] || '获取失败',
+        color: getColor(),
+      })),
+    ]
 
     // 统计日列表计算日期差
     const dateDiffParams = getDateDiffList(user.customizedDateList).map((item) => ({
