@@ -982,12 +982,12 @@ export const getAggregatedData = async () => {
     const compactParams = [
       {
         name: 'd',
-        value: getTemplateValue('date'),
+        value: `🗓️${getTemplateValue('date')}`,
         color: getColor(),
       },
       {
         name: 'l',
-        value: getTemplateValue('love_day'),
+        value: `在一起第${getTemplateValue('love_day')}天❤️`,
         color: getColor(),
       },
       {
@@ -1002,7 +1002,7 @@ export const getAggregatedData = async () => {
       },
       {
         name: 'w1',
-        value: getTemplateValue('other_course_0'),
+        value: `今日课程：${getTemplateValue('other_course_0')}`,
         color: getColor(),
       },
       {
@@ -1022,7 +1022,7 @@ export const getAggregatedData = async () => {
       },
       {
         name: 'j1',
-        value: getTemplateValue('wx_course_schedule_0'),
+        value: `今日课程：${getTemplateValue('wx_course_schedule_0')}`,
         color: getColor(),
       },
       {
