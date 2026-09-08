@@ -972,7 +972,16 @@ export const getAggregatedData = async () => {
       .concat(wxPoisonChickenSoup)
       .concat(wxPoetryContent)
       .concat(wxHolidaytts)
-
+    // 仅检查课程字段，不打印密钥和用户ID
+    console.log('课表诊断', JSON.stringify({
+      usesUserInfo: Boolean(process.env.USER_INFO),
+      courses: wxTemplateParams.filter(
+        item => item && (
+          item.name.startsWith('other_course_') ||
+          item.name.startsWith('wx_course_schedule_')
+        )
+      ),
+    }, null, 2))
     user.wxTemplateParams = wxTemplateParams
   }
 
