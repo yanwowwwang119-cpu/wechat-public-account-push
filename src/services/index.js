@@ -955,6 +955,7 @@ export const getAggregatedData = async () => {
       { name: toLowerLine('poetryTitle'), value: poetryTitle, color: getColor() },
       { name: toLowerLine('courseSchedule'), value: courseSchedule, color: getColor() },
     ].concat(weatherMessage)
+      .concat(otherWeatherMessage)
       .concat(constellationFortune)
       .concat(dateDiffParams)
       .concat(slotParams)
