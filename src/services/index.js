@@ -972,16 +972,37 @@ export const getAggregatedData = async () => {
       .concat(wxPoisonChickenSoup)
       .concat(wxPoetryContent)
       .concat(wxHolidaytts)
-    // 仅检查课程字段，不打印密钥和用户ID
-    console.log('课表诊断', JSON.stringify({
-      usesUserInfo: Boolean(process.env.USER_INFO),
-      courses: wxTemplateParams.filter(
-        item => item && (
-          item.name.startsWith('other_course_') ||
-          item.name.startsWith('wx_course_schedule_')
-        )
-      ),
-    }, null, 2))
+    // 从已经生成的模板参数中读取值
+    const getTemplateValue = (name) => {
+      const target = wxTemplateParams.find((item) => item.name === name)
+      return target ? (target.value ?? '') : ''
+    }
+
+    // 将完整消息拼成一个字段，避免微信模板源码过长
+    const dailyMessage = [
+      `🗓️${getTemplateValue('date')}`,
+      '',
+      `在一起第${getTemplateValue('love_day')}天❤️`,
+      '',
+      `窝在${getTemplateValue('city')}${getTemplateValue('weather')}的天`,
+      `温度：${getTemplateValue('min_temperature')}～${getTemplateValue('max_temperature')}`,
+      '今日课程：',
+      getTemplateValue('other_course_0'),
+      getTemplateValue('other_course_1'),
+      '',
+      `佳在${getTemplateValue('other_city')}${getTemplateValue('other_weather')}的天`,
+      `温度：${getTemplateValue('other_min_temperature')}～${getTemplateValue('other_max_temperature')}`,
+      '今日课程：',
+      getTemplateValue('wx_course_schedule_0'),
+      getTemplateValue('wx_course_schedule_1'),
+    ].join('\n')
+
+    wxTemplateParams.push({
+      name: 'daily_message',
+      value: dailyMessage,
+      color: getColor(),
+    })
+
     user.wxTemplateParams = wxTemplateParams
   }
 
