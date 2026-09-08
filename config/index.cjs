@@ -48,14 +48,6 @@ const USER_CONFIG = {
   // 使用微信测试号：公众号APP_SECRET
   APP_SECRET: '8163c4057ada41abd1cf735c51a34a1a',
 
-  // wyw所在城市
-  province: '天津',
-  city: '天津',
-
-  // zjy所在城市
-  otherProvince: '广东',
-  otherCity: '深圳',
-
   // 小窝的今日课程
 SLOT_LIST: otherCourseSlots,
   
@@ -63,6 +55,15 @@ SLOT_LIST: otherCourseSlots,
     {
       // 想要发送的人的名字
       name: 'wyw',
+      
+      // wyw所在城市
+      province: '天津',
+      city: '天津',
+
+      // zjy所在城市
+      otherProvince: '广东',
+      otherCity: '深圳',
+
       // 使用微信测试号：扫码关注你的微信测试号后生成的一段字符串，在测试号后台能看到
       id: 'oI6z32-thaOTxjmHmWkg2R8ZkWE0',
       // 使用微信测试号：你想对他发送的模板消息的模板ID
