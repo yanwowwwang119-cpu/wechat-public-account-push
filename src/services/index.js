@@ -972,36 +972,72 @@ export const getAggregatedData = async () => {
       .concat(wxPoisonChickenSoup)
       .concat(wxPoetryContent)
       .concat(wxHolidaytts)
-    // 从已经生成的模板参数中读取值
+    // 读取已经生成的模板参数
     const getTemplateValue = (name) => {
       const target = wxTemplateParams.find((item) => item.name === name)
       return target ? (target.value ?? '') : ''
     }
 
-    // 将完整消息拼成一个字段，避免微信模板源码过长
-    const dailyMessage = [
-      `🗓️${getTemplateValue('date')}`,
-      '',
-      `在一起第${getTemplateValue('love_day')}天❤️`,
-      '',
-      `窝在${getTemplateValue('city')}${getTemplateValue('weather')}的天`,
-      `温度：${getTemplateValue('min_temperature')}～${getTemplateValue('max_temperature')}`,
-      '今日课程：',
-      getTemplateValue('other_course_0'),
-      getTemplateValue('other_course_1'),
-      '',
-      `佳在${getTemplateValue('other_city')}${getTemplateValue('other_weather')}的天`,
-      `温度：${getTemplateValue('other_min_temperature')}～${getTemplateValue('other_max_temperature')}`,
-      '今日课程：',
-      getTemplateValue('wx_course_schedule_0'),
-      getTemplateValue('wx_course_schedule_1'),
-    ].join('\n')
+    // 使用短字段，防止微信模板和单个字段过长
+    const compactParams = [
+      {
+        name: 'd',
+        value: getTemplateValue('date'),
+        color: getColor(),
+      },
+      {
+        name: 'l',
+        value: getTemplateValue('love_day'),
+        color: getColor(),
+      },
+      {
+        name: 'wi',
+        value: `窝在${getTemplateValue('city')}${getTemplateValue('weather')}的天`,
+        color: getColor(),
+      },
+      {
+        name: 'wt',
+        value: `温度：${getTemplateValue('min_temperature')}～${getTemplateValue('max_temperature')}`,
+        color: getColor(),
+      },
+      {
+        name: 'w1',
+        value: getTemplateValue('other_course_0'),
+        color: getColor(),
+      },
+      {
+        name: 'w2',
+        value: getTemplateValue('other_course_1'),
+        color: getColor(),
+      },
+      {
+        name: 'ji',
+        value: `佳在${getTemplateValue('other_city')}${getTemplateValue('other_weather')}的天`,
+        color: getColor(),
+      },
+      {
+        name: 'jt',
+        value: `温度：${getTemplateValue('other_min_temperature')}～${getTemplateValue('other_max_temperature')}`,
+        color: getColor(),
+      },
+      {
+        name: 'j1',
+        value: getTemplateValue('wx_course_schedule_0'),
+        color: getColor(),
+      },
+      {
+        name: 'j2',
+        value: getTemplateValue('wx_course_schedule_1'),
+        color: getColor(),
+      },
+    ]
 
-    wxTemplateParams.push({
-      name: 'daily_message',
-      value: dailyMessage,
-      color: getColor(),
-    })
+    wxTemplateParams.push(...compactParams)
+
+    console.log(
+      '精简模板诊断',
+      JSON.stringify(compactParams, null, 2)
+    )
 
     user.wxTemplateParams = wxTemplateParams
   }
