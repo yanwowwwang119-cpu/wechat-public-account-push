@@ -24,7 +24,7 @@ const USER_CONFIG = {
       // 使用微信测试号：扫码关注你的微信测试号后生成的一段字符串，在测试号后台能看到
       id: 'oI6z32-thaOTxjmHmWkg2R8ZkWE0',
       // 使用微信测试号：你想对他发送的模板消息的模板ID
-      useTemplateId: '4KMWNX4GHsLHHR3nTRrcIL4WmOJjbzzOBxjhnwcpacw',
+      useTemplateId: 'iMVCBZYZ8Pj2zKo92doc37pGOoJ7BmhnzBuu4WYmuEs',
       // 新历生日, 仅用作获取星座运势, 格式必须为MM-DD
       horoscopeDate: '12-21',
       festivals: [
@@ -56,7 +56,7 @@ const USER_CONFIG = {
       // 小窝的课程表
       courseSchedule: [
         ['08:00-11:30-仲小敏-博A117'], // 周一
-        ['08:50-12:20-者萌-立C101','1400-1730-王耀东-劝C506'], // 周二
+        ['08:50-12:20-者萌-立C101','14:00-17:30-王耀东-劝C506'], // 周二
         ['14:00-17:30-周丽丽-劝A311'],// 周三
         ['没课:)'], // 周四
         ['14:00-17:30-李朝阳-劝C206'], // 周五
@@ -73,7 +73,7 @@ const USER_CONFIG = {
       // 使用微信测试号：扫码关注你的微信测试号后生成的一段字符串，在测试号后台能看到
       id: 'oI6z32-thaOTxjmHmWkg2R8ZkWE0',
       // 使用微信测试号：你想对他发送的模板消息的模板ID
-      useTemplateId: 'lv2e9jMyL1pnqq_hakMiedJwa_beLGOKOFCcT4zt2Sw',
+      useTemplateId: 'zZeWsPOwG8xhlfDNWNo11jbIk5LXgmDrDuBcFInvUXM',
       // 新历生日, 仅用作获取星座运势, 格式必须为MM-DD
       horoscopeDate: '12-21',
       festivals: [
