@@ -5,6 +5,40 @@
  * 如若想使用更多功能，请查考文档中的 【3. config参数说明】 
  * 自行添加属性，以支持更多个性化功能
  */
+//小窝的课程表
+const OTHER_COURSES = [
+  ['08:00-11:30-仲小敏-博A117'], // 周一
+  ['08:50-12:20-者萌-立C101','14:00-17:30-王耀东-劝C506'], // 周二
+  ['14:00-17:30-周丽丽-劝A311'],// 周三
+  ['没课:)'], // 周四
+  ['14:00-17:30-李朝阳-劝C206'], // 周五
+  ['没课:)'],              // 周六
+  ['没课:)']               // 周日
+]
+
+// 按北京时间判断今天是星期几，避免 GitHub 服务器时区影响
+const weekday = new Intl.DateTimeFormat('en-US', {
+  timeZone: 'Asia/Shanghai',
+  weekday: 'short'
+}).format(new Date())
+
+const dayIndex = [
+  'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'
+].indexOf(weekday)
+
+const otherToday = OTHER_COURSES[dayIndex] || []
+// 按条生成微信模板字段，至少预留四条
+const otherCourseSlots = Array.from(
+  { length: Math.max(4, otherToday.length) },
+  (_, index) => ({
+    keyword: `other_course_${index}`,
+    contents: otherToday[index] || (
+      index === 0 && otherToday.length === 0
+        ? '没课:)'
+        : ''
+    )
+  })
+)
 
 const USER_CONFIG = {
 
@@ -17,13 +51,16 @@ const USER_CONFIG = {
   USERS: [
     {
       // 想要发送的人的名字
-      name: 'wyw-zjy',
+      name: '问候',
       // wyw所在城市
       province: '天津',
       city: '天津',
+      //zjy所在城市
+      otherprovince: '广东',
+      othercity: '深圳',
       // 使用微信测试号：扫码关注你的微信测试号后生成的一段字符串，在测试号后台能看到
       id: 'oI6z32-thaOTxjmHmWkg2R8ZkWE0',
-      // 使用微信测试号：你想对他发送的模板消息的模板ID
+      // 使用微信测试号：问候模板ID
       useTemplateId: 'iMVCBZYZ8Pj2zKo92doc37pGOoJ7BmhnzBuu4WYmuEs',
       // 新历生日, 仅用作获取星座运势, 格式必须为MM-DD
       horoscopeDate: '12-21',
@@ -51,28 +88,17 @@ const USER_CONFIG = {
         { keyword: 'wx_birthday_0', date: '2002-12-21' },
         // 小佳生日
         { keyword: 'wx_birthday_1', date: '2002-12-29' },
-      ],
-      
-      // 小窝的课程表
-      courseSchedule: [
-        ['08:00-11:30-仲小敏-博A117'], // 周一
-        ['08:50-12:20-者萌-立C101','14:00-17:30-王耀东-劝C506'], // 周二
-        ['14:00-17:30-周丽丽-劝A311'],// 周三
-        ['没课:)'], // 周四
-        ['14:00-17:30-李朝阳-劝C206'], // 周五
-        ['没课:)'],              // 周六
-        ['没课:)']               // 周日
-      ]
+      ],  
     },
    {
       // 想要发送的人的名字
-      name: 'zjy-zjy',
+      name: '安排',
       // zjy所在城市
       province: '广东',
       city: '深圳',
       // 使用微信测试号：扫码关注你的微信测试号后生成的一段字符串，在测试号后台能看到
       id: 'oI6z32-thaOTxjmHmWkg2R8ZkWE0',
-      // 使用微信测试号：你想对他发送的模板消息的模板ID
+      // 使用微信测试号：安排模板ID
       useTemplateId: 'zZeWsPOwG8xhlfDNWNo11jbIk5LXgmDrDuBcFInvUXM',
       // 新历生日, 仅用作获取星座运势, 格式必须为MM-DD
       horoscopeDate: '12-21',
