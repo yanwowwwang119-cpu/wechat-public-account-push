@@ -59,8 +59,8 @@ const USER_CONFIG = {
       province: '天津',
       city: '天津',
       //zjy所在城市
-      otherprovince: '广东',
-      othercity: '深圳',
+      otherProvince: '广东',
+      otherCity: '深圳',
       // 使用微信测试号：扫码关注你的微信测试号后生成的一段字符串，在测试号后台能看到
       id: 'oI6z32-thaOTxjmHmWkg2R8ZkWE0',
       // 使用微信测试号：问候模板ID
