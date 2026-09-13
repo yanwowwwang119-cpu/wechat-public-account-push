@@ -99,7 +99,7 @@ const USER_CONFIG = {
       // 使用微信测试号：扫码关注你的微信测试号后生成的一段字符串，在测试号后台能看到
       id: 'oI6z32-thaOTxjmHmWkg2R8ZkWE0',
       // 使用微信测试号：安排模板ID
-      useTemplateId: 'rVtApzXrR-g6XBy1qSg7ldWwKqVFi8mBPILFi_nVo0E',
+      useTemplateId: 'uWpFGmZHn9vb00TML5DXt7PVhb_U8aqAlFslIIoWiJM',
       // 新历生日, 仅用作获取星座运势, 格式必须为MM-DD
       horoscopeDate: '12-21',
       festivals: [
