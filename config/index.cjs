@@ -47,6 +47,9 @@ const USER_CONFIG = {
 
   // 使用微信测试号：公众号APP_SECRET
   APP_SECRET: '8163c4057ada41abd1cf735c51a34a1a',
+
+    // 小窝的课程字段
+  SLOT_LIST: otherCourseSlots,
   
   USERS: [
     {
