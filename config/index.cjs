@@ -54,7 +54,7 @@ const USER_CONFIG = {
   USERS: [
     {
       // 想要发送的人的名字
-      name: '问候',
+      name: '问候tozjy',
       // wyw所在城市
       province: '天津',
       city: '天津',
@@ -95,12 +95,122 @@ const USER_CONFIG = {
     },
    {
       // 想要发送的人的名字
-      name: '安排',
+      name: '安排tozjy',
       // zjy所在城市
       province: '广东',
       city: '深圳',
       // 使用微信测试号：扫码关注你的微信测试号后生成的一段字符串，在测试号后台能看到
       id: 'oI6z32-thaOTxjmHmWkg2R8ZkWE0',
+      // 使用微信测试号：安排模板ID
+      useTemplateId: 'wxb_K-s2m3jzc_94LvrQyLfl-WsxFgxEPl6grAQ0o8s',
+      // 新历生日, 仅用作获取星座运势, 格式必须为MM-DD
+      horoscopeDate: '12-21',
+      festivals: [
+        // 注意：此条配置日期为阴历日期，因为`type`中 “生日” 之前有 * 符号
+        {
+          type: '*生日', name: '宝贝', year: '1996', date: '09-09',
+        },
+        // 注意：此条配置日期为阳历日期，因为`type`中 “生日” 之前没有 * 符号
+        {
+          type: '生日', name: '小窝', year: '2002', date: '12-21',
+        },
+        {
+          type: '生日', name: '小佳', year: '2002', date: '12-29',
+        },
+        {
+          type: '节日', name: '纪念日', year: '2024', date: '11-09',
+        },
+      ],
+      // 我们在一起已经有xxxx天了的配置
+      customizedDateList: [
+        // 在一起的日子
+        { keyword: 'love_day', date: '2024-11-09' },
+        // 小窝生日
+        { keyword: 'wx_birthday_0', date: '2002-12-21' },
+        // 小佳生日
+        { keyword: 'wx_birthday_1', date: '2002-12-29' },
+      ],
+      
+      // 小佳的课程表
+      courseSchedule: {
+        benchmark: {
+          // 示例：一个已知属于单周的周一
+          date: '2026-09-07',
+          isOdd: true
+        },
+        courses: {
+          // 单周：依次为周一到周日
+          odd: [
+            ['没课:)'], // 周一
+            ['没课:)'], // 周二
+            ['14:00-15:50-助教-综训馆'],// 周三
+            ['没课:)'], // 周四
+            ['10:20-12:10-行星基础-3#113'],// 周五
+            ['没课:)'],// 周六
+            ['没课:)']// 周日
+          ],
+
+          // 双周：依次为周一到周日
+          even: [
+            ['没课:)'], // 周一
+            ['14:00-15:50-行星基础-3#113'], // 周二
+            ['14:00-15:50-助教-综训馆'],// 周三
+            ['没课:)'], // 周四
+            ['10:20-12:10-行星基础-3#113'],// 周五
+            ['没课:)'],// 周六
+            ['没课:)']// 周日
+          ]
+        }
+      },
+    {
+      // 想要发送的人的名字
+      name: '问候towyw',
+      // wyw所在城市
+      province: '天津',
+      city: '天津',
+      //zjy所在城市
+      otherProvince: '广东',
+      otherCity: '深圳',
+      // 使用微信测试号：扫码关注你的微信测试号后生成的一段字符串，在测试号后台能看到
+      id: 'oI6z323vNknUBJWoUsrpfAqROFAM',
+      // 使用微信测试号：问候模板ID
+      useTemplateId: '8lgrv8QoMCMwbxJnRmsodQTxDYSC-O--ahdSrCA5a2s',
+      // 新历生日, 仅用作获取星座运势, 格式必须为MM-DD
+      horoscopeDate: '12-21',
+      festivals: [
+        // 注意：此条配置日期为阴历日期，因为`type`中 “生日” 之前有 * 符号
+        {
+          type: '*生日', name: '宝贝', year: '1996', date: '09-09',
+        },
+        // 注意：此条配置日期为阳历日期，因为`type`中 “生日” 之前没有 * 符号
+        {
+          type: '生日', name: '小窝', year: '2002', date: '12-21',
+        },
+        {
+          type: '生日', name: '小佳', year: '2002', date: '12-29',
+        },
+        {
+          type: '节日', name: '纪念日', year: '2024', date: '11-09',
+        },
+      ],
+      // 我们在一起已经有xxxx天了的配置
+      customizedDateList: [
+        // 在一起的日子
+        { keyword: 'love_day', date: '2024-11-09' },
+        // 小窝生日
+        { keyword: 'wx_birthday_0', date: '2002-12-21' },
+        // 小佳生日
+        { keyword: 'wx_birthday_1', date: '2002-12-29' },
+      ],  
+    },
+   {
+      // 想要发送的人的名字
+      name: '安排towyw',
+      // zjy所在城市
+      province: '广东',
+      city: '深圳',
+      // 使用微信测试号：扫码关注你的微信测试号后生成的一段字符串，在测试号后台能看到
+      id: 'oI6z323vNknUBJWoUsrpfAqROFAM',
       // 使用微信测试号：安排模板ID
       useTemplateId: 'wxb_K-s2m3jzc_94LvrQyLfl-WsxFgxEPl6grAQ0o8s',
       // 新历生日, 仅用作获取星座运势, 格式必须为MM-DD
